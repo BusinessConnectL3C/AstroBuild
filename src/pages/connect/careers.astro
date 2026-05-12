@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const jobs = [
+  { type: 'Internship', title: 'Logistics and Procurement Specialist', location: 'Remote', href: '#' },
+  { type: 'Internship', title: 'Brand Marketing Representative Launching', location: 'Remote', href: '#' },
+  { type: 'Internship', title: 'Brand Marketing Internship Launching', location: 'Remote', href: '#' },
+  { type: 'Internship', title: 'Digital Marketing Agency Seeking Internship', location: 'Remote', href: '#' },
+  { type: 'Internship', title: 'Digital Marketing Agency Seeking Manager', location: 'Remote', href: '#' },
+  { type: 'Internship', title: 'Digital Marketing Agency Seeking Intern', location: 'Remote', href: '#' },
+  { type: 'Full-time', title: 'Senior Water Engineer', location: 'Grand Rapids, MI', href: '#' },
+  { type: 'Full-time', title: 'Business Development Manager — Africa', location: 'Remote', href: '#' },
+  { type: 'Full-time', title: 'Supply Chain Coordinator', location: 'Grand Rapids, MI', href: '#' },
+  { type: 'Full-time', title: 'WASH Program Advisor', location: 'Remote', href: '#' },
+  { type: 'Full-time', title: 'Digital Marketing Manager', location: 'Grand Rapids, MI', href: '#' },
+  { type: 'Full-time', title: 'Field Operations Manager — Asia', location: 'Remote', href: '#' },
+];
+---
+
+<Layout title="Careers — Business Connect World">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1b3a6b] to-[#2d5a9e] text-white py-20">
+    <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-[#8dc63f] text-xs font-bold tracking-widest uppercase mb-3">Join Our Team</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+          Join a global team that's making an impact
+        </h1>
+        <p class="text-blue-200 text-sm leading-relaxed mb-6">
+          Explore opportunities to join our global team of experts working to ensure global access to safe water, hygiene, and sanitation. Gain meaningful experience and support global access to safe water.
+        </p>
+        <a href="#open-roles" class="inline-block bg-[#8dc63f] text-white font-bold px-6 py-3 rounded hover:bg-[#76a834] transition-colors text-sm">
+          View Open Roles
+        </a>
+      </div>
+      <div class="bg-white/10 rounded-xl aspect-video flex items-center justify-center">
+        <svg class="w-20 h-20 text-[#8dc63f] opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact statement -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-[#1b3a6b] font-extrabold text-2xl mb-4">Gain meaningful experience and support global access to safe water</h2>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          At Business Connect, you'll work alongside passionate professionals dedicated to solving one of the world's most pressing challenges. Whether you're a student, a seasoned expert, or a contractor, there's a place for you here.
+        </p>
+      </div>
+
+      <!-- Tabs -->
+      <div id="open-roles" class="mb-8 flex gap-2">
+        <button id="tab-ft" class="tab-btn bg-[#1b3a6b] text-white font-bold px-5 py-2 rounded text-sm" data-tab="full-time">Full-time</button>
+        <button id="tab-contract" class="tab-btn bg-gray-100 text-gray-600 hover:bg-gray-200 font-bold px-5 py-2 rounded text-sm" data-tab="contractor">Contractor / Skilled</button>
+      </div>
+
+      <!-- Full-time jobs -->
+      <div id="tab-content-full-time" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {jobs.filter(j => j.type === 'Full-time').map(({ title, location, href }) => (
+          <div class="border border-gray-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+            <span class="text-[#8dc63f] text-xs font-bold uppercase tracking-wide">Full-time</span>
+            <h3 class="font-bold text-[#1b3a6b] text-sm mt-1 mb-2">{title}</h3>
+            <p class="text-gray-500 text-xs flex items-center gap-1 mb-3">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              {location}
+            </p>
+            <a href={href} class="flex items-center gap-1 text-[#1d4ed8] text-xs font-semibold hover:underline">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              Apply now
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <!-- Contractor jobs -->
+      <div id="tab-content-contractor" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 hidden">
+        {jobs.filter(j => j.type === 'Internship').map(({ title, location, href }) => (
+          <div class="border border-gray-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+            <span class="text-orange-500 text-xs font-bold uppercase tracking-wide">Internship</span>
+            <h3 class="font-bold text-[#1b3a6b] text-sm mt-1 mb-2">{title}</h3>
+            <p class="text-gray-500 text-xs flex items-center gap-1 mb-3">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              {location}
+            </p>
+            <a href={href} class="flex items-center gap-1 text-[#1d4ed8] text-xs font-semibold hover:underline">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              Apply now
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.tab-btn');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab as string;
+        tabs.forEach(t => {
+          t.classList.toggle('bg-[#1b3a6b]', t.dataset.tab === target);
+          t.classList.toggle('text-white', t.dataset.tab === target);
+          t.classList.toggle('bg-gray-100', t.dataset.tab !== target);
+          t.classList.toggle('text-gray-600', t.dataset.tab !== target);
+        });
+        document.getElementById('tab-content-full-time')?.classList.toggle('hidden', target !== 'full-time');
+        document.getElementById('tab-content-contractor')?.classList.toggle('hidden', target !== 'contractor');
+      });
+    });
+  </script>
+
+</Layout>

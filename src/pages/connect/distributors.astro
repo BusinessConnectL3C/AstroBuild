@@ -1,0 +1,115 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const team = [
+  { name: 'Mark Kay', title: 'VP of Sales, Americas' },
+  { name: 'Louis Pitman', title: 'Regional Director, Africa' },
+  { name: 'Janet Trudeau', title: 'Regional Director, Asia Pacific' },
+  { name: 'Alex Johannsen', title: 'Regional Director, Europe' },
+  { name: 'Glen Walker', title: 'Director, Distributor Relations' },
+  { name: 'Alexander Philippe', title: 'Director, Business Development' },
+];
+
+const pillars = [
+  { icon: '🌍', title: 'Expanding Reach', body: 'We are always looking to grow our network of regional distribution partners to deliver safe water and hygiene products to new markets.' },
+  { icon: '📦', title: 'Dedicated Inventory Support', body: 'We provide inventory management tools, forecasting assistance, and logistics support to help our distributors maintain optimal stock levels.' },
+  { icon: '🤝', title: 'Partnership First', body: 'Our relationships with distributors are built on mutual trust, shared values, and a long-term commitment to impact.' },
+  { icon: '📊', title: 'Marketing & Sales Support', body: 'Access to marketing materials, product training, and sales enablement resources to help you grow your business.' },
+  { icon: '🏆', title: 'Recognized Excellence', body: 'Top-performing distributors receive recognition, incentives, and access to exclusive product launches and opportunities.' },
+  { icon: '🌱', title: 'Social Impact Aligned', body: 'Every distributor is part of a mission that goes beyond profit — helping communities gain access to life-changing resources.' },
+];
+---
+
+<Layout title="Distributors — Business Connect World">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1b3a6b] to-[#2d5a9e] text-white py-20">
+    <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-[#8dc63f] text-xs font-bold tracking-widest uppercase mb-3">Connect</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+          A Truly Global Network For Global Impact
+        </h1>
+        <p class="text-blue-200 text-sm leading-relaxed mb-6">
+          Business Connect empowers local entrepreneurs to build sustainable businesses while making a difference. Our business model is built on distribution — working in over 40 countries, we specialize in helping local businesses thrive.
+        </p>
+        <!-- Stats -->
+        <div class="flex gap-8">
+          {[
+            { num: '80+', label: 'Countries' },
+            { num: '150', label: 'Distributors' },
+            { num: '15%', label: 'Annual Growth' },
+          ].map(({ num, label }) => (
+            <div>
+              <p class="text-[#8dc63f] font-extrabold text-3xl">{num}</p>
+              <p class="text-blue-200 text-xs mt-0.5">{label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden">
+        <div class="bg-white/10 aspect-video flex items-center justify-center rounded-xl">
+          <!-- YouTube embed placeholder -->
+          <div class="text-center">
+            <svg class="w-16 h-16 text-white/50 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            <p class="text-white/60 text-sm">Business Connect: A Case for the Distributor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thinking globally -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-8">
+      <h2 class="text-[#1b3a6b] font-extrabold text-2xl text-center mb-10">Thinking globally. Serving locally.</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {pillars.map(({ icon, title, body }) => (
+          <div class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+            <div class="text-3xl mb-3">{icon}</div>
+            <h3 class="font-bold text-[#1b3a6b] text-sm mb-2">{title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
+            <a href="/connect/contact" class="flex items-center gap-1 text-[#1d4ed8] text-xs font-semibold hover:underline mt-3">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              Learn more
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-8">
+      <p class="text-[#8dc63f] text-xs font-bold tracking-widest uppercase text-center mb-2">Our People</p>
+      <h2 class="text-[#1b3a6b] font-extrabold text-2xl text-center mb-10">A truly global team of all-stars</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {team.map(({ name, title }) => (
+          <div class="bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#1b3a6b] to-[#2d5a9e] mx-auto mb-3 flex items-center justify-center">
+              <svg class="w-10 h-10 text-white opacity-60" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+              </svg>
+            </div>
+            <p class="font-bold text-[#1b3a6b] text-sm">{name}</p>
+            <p class="text-gray-500 text-xs mt-0.5">{title}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-[#1b3a6b] text-white py-14">
+    <div class="max-w-xl mx-auto px-8 text-center">
+      <h2 class="font-extrabold text-2xl mb-4">Ready to partner? Get in touch!</h2>
+      <a href="/connect/contact" class="inline-block bg-[#8dc63f] text-white font-bold px-8 py-3 rounded hover:bg-[#76a834] transition-colors text-sm">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,107 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Water-Energy Nexus: Lessons from Zambia — Business Connect World">
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-[#0f2444] to-[#1b3a6b] text-white py-24">
+    <div class="max-w-4xl mx-auto px-8">
+      <nav class="text-blue-300 text-xs mb-6 flex items-center gap-1">
+        <a href="/" class="hover:text-white">Home</a><span>/</span>
+        <a href="/blog" class="hover:text-white">Blog</a><span>/</span>
+        <span class="text-white">Water-Energy Nexus: Lessons from Zambia</span>
+      </nav>
+      <span class="text-[#8dc63f] text-xs font-bold uppercase tracking-widest mb-3 block">Knowledge</span>
+      <h1 class="text-3xl md:text-4xl font-extrabold leading-tight">Water-Energy Nexus: Lessons from Zambia</h1>
+      <p class="text-blue-300 text-sm mt-4">February 9, 2025</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="bg-white py-12">
+    <div class="max-w-4xl mx-auto px-8">
+      <div class="prose prose-sm prose-blue max-w-none">
+        <h2>Author Introduction</h2>
+        <p>
+          Charity Tuseko Muwowo Sindano is a seasoned water practitioner with 9+ years of experience across the USA, UK, and Africa. She has spearheaded water management energy efficiency efforts in the USA. Charity Tuseko Muwowo Sindano is a seasoned water practitioner.
+        </p>
+
+        <h2>Introduction</h2>
+        <p>
+          The intersection of water and energy is one of the most complex and interconnected challenges facing the world today. In Zambia, a landlocked country in southern Africa, the water-energy nexus presents both significant challenges and unique opportunities for sustainable development.
+        </p>
+        <p>
+          Zambia is endowed with abundant water resources — the Zambezi River, the country's largest, is the source of the famous Victoria Falls and feeds into the massive Kariba Dam, one of the largest man-made reservoirs in the world. Yet, despite this abundance, millions of Zambians lack reliable access to clean water.
+        </p>
+
+        <h2>What Makes Water-Energy Nexus Unfavorable</h2>
+        <p>
+          The relationship between water and energy is deeply intertwined. Water is needed to generate energy — through hydropower, thermoelectric cooling, and biofuel production. At the same time, energy is required to pump, treat, and distribute water. When either resource is scarce or unreliable, the other suffers.
+        </p>
+
+        <h2>Energy Sources</h2>
+        <p>
+          Zambia relies heavily on hydropower for its electricity generation, with approximately 80% of its electricity coming from hydroelectric sources. The Kariba Dam and Kafue Gorge Power Station are the country's primary sources of electricity.
+        </p>
+
+        <h2>The Mystery of the Perfect Energy-Water International</h2>
+        <p>
+          Despite the challenges, there are emerging models of water-energy integration that offer hope. Community-scale solar-powered water systems are being deployed in rural areas, providing both electricity and clean water to communities that have historically had neither.
+        </p>
+
+        <h2>Hydropower in Context</h2>
+        <p>
+          Zambia's heavy reliance on hydropower makes it particularly vulnerable to climate variability. During drought years, reduced water levels in reservoirs lead to electricity shortages, which in turn affect water treatment and distribution systems. This creates a dangerous feedback loop.
+        </p>
+
+        <h2>Sustainability in Context</h2>
+        <p>
+          For Zambia to achieve true water-energy security, it must pursue a diversified approach to both resources. This means investing in alternative energy sources such as solar and wind, while also developing more efficient water management systems that can function with less energy input.
+        </p>
+
+        <h2>Summary</h2>
+        <p>
+          The water-energy nexus in Zambia illustrates the broader challenge facing many developing nations: how to achieve sustainable development in the face of resource constraints and climate uncertainty. The lessons from Zambia are relevant far beyond its borders, offering insights into how the world can navigate the complex interplay between these two essential resources.
+        </p>
+
+        <h2>References</h2>
+        <ul>
+          <li>World Health Organization. (2023). Drinking-water. WHO Fact Sheets.</li>
+          <li>International Energy Agency. (2023). World Energy Outlook.</li>
+          <li>United Nations Development Programme. (2023). Human Development Report.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Posts -->
+  <section class="bg-gray-50 py-12 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <h2 class="text-[#1b3a6b] font-extrabold text-xl mb-6">Recent Posts</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        {[
+          { title: 'From Science to Global Impact', href: '/blog/science-to-global-impact', color: 'from-gray-600 to-gray-400' },
+          { title: 'Your Healthiest New Year Starts with Smarter Hydration', href: '/blog/healthy-new-year', color: 'from-teal-700 to-teal-500' },
+          { title: 'Bacterial Presence on Textiles', href: '/blog/bacterial-textiles', color: 'from-green-700 to-green-500' },
+        ].map(({ title, href, color }) => (
+          <a href={href} class="group block rounded-xl overflow-hidden border border-gray-200 bg-white hover:shadow-md transition-shadow">
+            <div class={`bg-gradient-to-br ${color} h-28`}></div>
+            <div class="p-4">
+              <h3 class="font-bold text-[#1b3a6b] text-sm leading-snug group-hover:underline">{title}</h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .prose h2 { color: #1b3a6b; font-weight: 700; font-size: 1.125rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+  .prose p { color: #4b5563; line-height: 1.7; margin-bottom: 1rem; }
+  .prose ul { color: #4b5563; padding-left: 1.5rem; margin-bottom: 1rem; }
+  .prose li { margin-bottom: 0.25rem; list-style-type: disc; }
+  .prose a { color: #1d4ed8; }
+</style>

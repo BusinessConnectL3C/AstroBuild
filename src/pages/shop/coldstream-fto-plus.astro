@@ -1,0 +1,151 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Coldstream Ceramic Water Filter FTO Plus — Business Connect World">
+
+  <!-- Breadcrumb -->
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-8 py-3">
+      <nav class="text-xs text-gray-500 flex items-center gap-1">
+        <a href="/" class="hover:text-[#1b3a6b]">Home</a>
+        <span>/</span>
+        <a href="/shop" class="hover:text-[#1b3a6b]">Shop Products</a>
+        <span>/</span>
+        <span class="text-[#1b3a6b] font-medium">Coldstream Ceramic Water Filter FTO Plus</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Product detail -->
+  <section class="bg-white py-12">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid md:grid-cols-2 gap-12">
+
+        <!-- Images -->
+        <div>
+          <div class="border border-gray-200 rounded-xl aspect-square flex items-center justify-center bg-gray-50 mb-3">
+            <svg class="w-32 h-32 text-[#1b3a6b] opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div class="flex gap-2">
+            {[1,2,3,4].map(i => (
+              <div class="w-16 h-16 border border-gray-200 rounded-lg bg-gray-50 flex items-center justify-center cursor-pointer hover:border-[#1b3a6b] transition-colors">
+                <svg class="w-8 h-8 text-[#1b3a6b] opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14"/>
+                </svg>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div>
+          <h1 class="text-2xl md:text-3xl font-extrabold text-[#1b3a6b] mb-2">Coldstream Ceramic Water Filter FTO Plus</h1>
+          <p class="text-[#8dc63f] font-bold text-xl mb-4">Starting at: <span class="text-gray-400 line-through text-base font-normal">$47.99</span> $184.99</p>
+
+          <div class="flex items-start gap-2 mb-4 text-sm text-gray-700">
+            <svg class="w-4 h-4 text-[#8dc63f] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Coldstream's FTO Plus is a dependable ceramic water filter suitable for gravity-fed countertop filtration systems. It has been tested to remove most common contaminants, including bacteria, heavy metals, chemicals, and pesticides.</span>
+          </div>
+
+          <!-- Size selector placeholder -->
+          <div class="mb-6">
+            <p class="font-semibold text-[#1b3a6b] text-sm mb-2">Size</p>
+            <select class="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#8dc63f] w-full md:w-auto">
+              <option>Choose an option</option>
+              <option>Standard</option>
+              <option>Large</option>
+            </select>
+          </div>
+
+          <!-- Qty + Add to cart -->
+          <div class="flex gap-3 items-center mb-4">
+            <div class="flex border border-gray-300 rounded overflow-hidden">
+              <button class="px-3 py-2 text-gray-600 hover:bg-gray-100 transition-colors text-lg">−</button>
+              <input type="number" value="1" min="1" class="w-12 text-center border-x border-gray-300 py-2 text-sm focus:outline-none"/>
+              <button class="px-3 py-2 text-gray-600 hover:bg-gray-100 transition-colors text-lg">+</button>
+            </div>
+            <button class="bg-[#8dc63f] text-white font-bold px-6 py-2.5 rounded hover:bg-[#76a834] transition-colors text-sm">
+              Add to Cart
+            </button>
+          </div>
+
+          <button class="w-full border border-[#1b3a6b] text-[#1b3a6b] font-bold py-2.5 rounded hover:bg-[#1b3a6b] hover:text-white transition-colors text-sm mb-6">
+            Request Agency Pricing
+          </button>
+
+          <!-- Feature bullets -->
+          <div class="space-y-1">
+            {[
+              'No Power Needed: Harness the power of gravity with this water filter cartridge',
+              'Never worry about not having potable water when you need it most',
+              'Compatible with many gravity systems as a standalone filter',
+              'Recommended cleaning after 6 months',
+              'More Sustainable — the filter is BPA plastic free and manufactured using renewable energy',
+            ].map(feat => (
+              <div class="flex items-start gap-2 text-xs text-gray-600">
+                <svg class="w-4 h-4 text-[#8dc63f] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                {feat}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Product Information tabs -->
+  <section class="bg-gray-50 py-12">
+    <div class="max-w-7xl mx-auto px-8">
+      <h2 class="text-[#1b3a6b] font-extrabold text-xl mb-6">Additional Product Information</h2>
+
+      <!-- Tab nav -->
+      <div class="flex border-b border-gray-300 mb-6">
+        {['General', 'Technical Specifications', 'Reviews (0)'].map((tab, i) => (
+          <button class={`px-5 py-2.5 text-sm font-semibold border-b-2 -mb-px ${i === 0 ? 'border-[#1b3a6b] text-[#1b3a6b]' : 'border-transparent text-gray-500 hover:text-[#1b3a6b]'} transition-colors`}>
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      <!-- General content -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <ul class="space-y-2 text-sm text-gray-700">
+            {[
+              'Powerful Filtration — Tested to remove microorganisms, heavy metals, chemicals, and pharmaceuticals',
+              'Globally Certified — Tested and certified for contaminant removal by the NSF',
+              'Dependable and Trustworthy — FTO Plus is tested against hundreds of contaminants to ensure water quality',
+              'Easy Maintenance — Compatible with most gravity filtration systems',
+              'Improves Taste — Activated carbon works to remove poor tastes in your water',
+              'Seamless Integration — Compatible with many gravity systems as a standalone filter',
+              'Ultra Maintenance — Recommended cleaning after 3 months; simply run the filter inside out of water',
+              'More Sustainable — the filter is BPA plastic free and manufactured using renewable energy',
+            ].map(item => (
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-[#8dc63f] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            The Coldstream FTO Plus Ceramic Gravity Water Filter is a highly effective solution for ensuring potable and crisp tasting drinking water. With its advanced ceramic technology, it removes 99.9% of dangerous microorganisms, and further reduces contaminants such as lead, fluoride, and microplastics. This comprehensive purification process guarantees that your water is safe for consumption.
+          </p>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            Inside the FTO Plus filter there is a specialized ceramic layer. A unique feature that provides maximum protection against harmful bacteria, while simultaneously eliminating all particles and microplastics that may lurk in your water. This advanced layer acts as a fortress, shielding you and your household against dangerous waterborne threats.
+          </p>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            The FTO Plus is compatible with several types of gravity water filter systems, including Berkey, Renova, British Berkefeld Gravity Systems, as well as Coldstream's Counter Top Water Filter System.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

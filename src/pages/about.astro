@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About — Business Connect World">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1b3a6b] to-[#1e4a80] text-white py-20">
+    <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-[#8dc63f] text-xs font-bold tracking-widest uppercase mb-3">Who We Are</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">Better Solutions,<br/>Sustainable Futures.</h1>
+        <p class="text-blue-200 leading-relaxed text-sm max-w-lg">
+          Business Connect is a mission-driven company leveraging a market-driven approach to improve health, education, and economies by equipping individuals and communities with life-enhancing products and services.
+        </p>
+      </div>
+      <div class="bg-white/10 rounded-xl aspect-video flex items-center justify-center">
+        <svg class="w-20 h-20 text-[#8dc63f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Mission -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-8">
+      <p class="text-[#8dc63f] text-xs font-bold tracking-widest uppercase text-center mb-2">Our Mission</p>
+      <h2 class="text-[#1b3a6b] font-extrabold text-2xl text-center mb-10">Connecting business expertise with social impact</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            heading: 'Purpose',
+            body: 'According to the World Health Organization, 1.4 million lives are lost each year due to inadequate access to water, sanitation, and hygiene services, which not only threatens health and well-being but also hinders economic development and educational opportunities.',
+          },
+          {
+            heading: 'Products',
+            body: "We've collaborated with innovative manufacturers and a global network of partners and distributors to provide life-enhancing resources to local communities — offering a diverse portfolio from water treatment and filtration to health and hygiene products.",
+          },
+          {
+            heading: 'People',
+            body: 'Our team and network spans the globe. We work with NGOs advancing WASH initiatives, researchers gathering data, healthcare professionals, and entrepreneurs all seeking market-based solutions to global health challenges.',
+          },
+        ].map(({ heading, body }) => (
+          <div class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+            <h3 class="font-bold text-[#1b3a6b] text-base mb-3">{heading}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Culture section -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="text-[#1b3a6b] font-extrabold text-3xl mb-6">A culture of excellence fueled by compassion</h2>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+          At Business Connect, we believe that doing well and doing good are not mutually exclusive. Our team is driven by a shared commitment to excellence, integrity, and creating meaningful change in the world.
+        </p>
+        <div class="space-y-5">
+          {[
+            { title: 'Mission', body: 'We exist to improve lives by connecting businesses and communities with the solutions they need to thrive.' },
+            { title: 'Humanity', body: 'We approach every relationship with empathy, compassion, and a genuine desire to serve. People are at the center of everything we do.' },
+            { title: 'Transparency', body: 'We hold ourselves to the highest standards of honesty and accountability in all our partnerships, products, and communications.' },
+          ].map(({ title, body }) => (
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-full bg-[#8dc63f] text-white flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#1b3a6b] text-sm mb-1">{title}</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="bg-white/60 rounded-xl aspect-square flex items-center justify-center border border-gray-200">
+        <svg class="w-24 h-24 text-[#1b3a6b] opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Heart, perseverance strip -->
+  <section class="bg-[#1b3a6b] text-white py-16">
+    <div class="max-w-7xl mx-auto px-8">
+      <p class="text-[#8dc63f] text-xs font-bold tracking-widest uppercase text-center mb-2">Our Approach</p>
+      <h2 class="text-3xl font-extrabold text-center mb-10">Heart, perseverance, and hard work</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white/10 rounded-xl p-6">
+          <h3 class="font-bold text-lg mb-3">Keep it simple</h3>
+          <p class="text-blue-200 text-sm leading-relaxed">
+            In 1998, Business Connect was founded on the belief that solving big problems requires straightforward, practical solutions. We avoid unnecessary complexity and focus on what works — proven products, trusted partnerships, and clear communication.
+          </p>
+        </div>
+        <div class="bg-white/10 rounded-xl p-6">
+          <h3 class="font-bold text-lg mb-3">Where we're headed</h3>
+          <p class="text-blue-200 text-sm leading-relaxed">
+            We are creating tools through business creates impact. We are well on our way to creating a world where every person, regardless of geography or circumstance, has access to the clean water and hygiene solutions they need to live a healthy life.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-8">
+      <p class="text-[#8dc63f] text-xs font-bold tracking-widest uppercase text-center mb-2">Our Team</p>
+      <h2 class="text-[#1b3a6b] font-extrabold text-2xl text-center mb-10">World-class leaders with global experience and a passion for change</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {[
+          { name: 'Luis Hernandez', title: 'CEO & Co-Founder' },
+          { name: 'Aaron Crumpton', title: 'Director, Sales & Operations' },
+          { name: 'Nancy King', title: 'Director, Partnerships' },
+          { name: 'Stephanie Babbitt', title: 'Director, Marketing' },
+        ].map(({ name, title }) => (
+          <div class="text-center">
+            <div class="w-28 h-28 rounded-full bg-gradient-to-br from-[#1b3a6b] to-[#2d5a9e] mx-auto mb-3 flex items-center justify-center">
+              <svg class="w-14 h-14 text-white opacity-60" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+              </svg>
+            </div>
+            <p class="font-bold text-[#1b3a6b] text-sm">{name}</p>
+            <p class="text-gray-500 text-xs mt-0.5">{title}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Stats -->
+  <section class="bg-gray-50 border-t border-gray-200 py-16">
+    <div class="max-w-7xl mx-auto px-8">
+      <p class="text-[#8dc63f] text-xs font-bold tracking-widest uppercase text-center mb-2">Our Reach</p>
+      <h2 class="text-[#1b3a6b] font-extrabold text-2xl text-center mb-10">Global partnerships for global impact</h2>
+      <div class="flex flex-wrap justify-center gap-12 mb-10">
+        {[
+          { num: '74+', label: 'Countries Reached' },
+          { num: '139', label: 'Global Partners' },
+          { num: '75B', label: 'Lives Impacted' },
+        ].map(({ num, label }) => (
+          <div class="text-center">
+            <p class="text-[#8dc63f] font-extrabold text-5xl">{num}</p>
+            <p class="text-gray-500 text-sm mt-1">{label}</p>
+          </div>
+        ))}
+      </div>
+      <!-- World map placeholder -->
+      <div class="bg-[#e8f0fe] rounded-xl py-12 flex items-center justify-center">
+        <svg class="w-full max-w-2xl h-48 text-[#1b3a6b] opacity-20" fill="currentColor" viewBox="0 0 800 400">
+          <ellipse cx="400" cy="200" rx="380" ry="180" opacity="0.3"/>
+          <text x="400" y="210" text-anchor="middle" font-size="24" font-family="sans-serif" fill="#1b3a6b" opacity="0.5">Global Partnership Map</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature boxes -->
+  <section class="bg-white py-14">
+    <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-6">
+      <div class="rounded-xl overflow-hidden border border-gray-200 flex flex-col md:flex-row hover:shadow-md transition-shadow">
+        <div class="bg-gradient-to-br from-blue-800 to-blue-600 w-full md:w-40 h-32 md:h-auto flex-shrink-0"></div>
+        <div class="p-6">
+          <h3 class="font-bold text-[#1b3a6b] text-base mb-2">Your Source & Water</h3>
+          <p class="text-gray-600 text-sm mb-3 leading-relaxed">World-class water solutions for any application, from rural, domestic, and beyond.</p>
+          <a href="/explore/bc-for-water" class="flex items-center gap-1 text-[#1d4ed8] text-sm font-semibold hover:underline">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            Learn more
+          </a>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden border border-gray-200 flex flex-col md:flex-row hover:shadow-md transition-shadow">
+        <div class="bg-gradient-to-br from-green-700 to-green-500 w-full md:w-40 h-32 md:h-auto flex-shrink-0"></div>
+        <div class="p-6">
+          <h3 class="font-bold text-[#1b3a6b] text-base mb-2">Connections</h3>
+          <p class="text-gray-600 text-sm mb-3 leading-relaxed">Building bridges between organizations, innovators, and communities worldwide.</p>
+          <a href="/connect/distributors" class="flex items-center gap-1 text-[#1d4ed8] text-sm font-semibold hover:underline">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            Learn more
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gray-50 border-t border-gray-200 py-14">
+    <div class="max-w-xl mx-auto px-8 text-center">
+      <h2 class="text-[#1b3a6b] font-extrabold text-2xl mb-4">Want to know more? Get in touch!</h2>
+      <a href="/connect/contact" class="inline-block bg-[#1b3a6b] text-white font-bold px-8 py-3 rounded hover:bg-[#152d52] transition-colors text-sm">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+</Layout>

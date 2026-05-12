@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  { title: 'Water-Energy Nexus: Lessons from Zambia', date: 'February 9, 2025', excerpt: 'Author Charity Tuseko Muwowo Sindano is a seasoned water practitioner with 9+ years of experience across the USA, UK, and Africa. She has spearheaded water management energy efficiency efforts in the USA.', href: '/blog/water-energy-nexus-zambia', color: 'from-blue-800 to-blue-700', featured: true },
+  { title: 'Water-Energy Nexus: Lessons from Zambia', date: 'February 9, 2025', excerpt: 'A deep dive into the interconnected challenges of water and energy access.', href: '/blog/water-energy-nexus-zambia-2', color: 'from-blue-700 to-blue-500', featured: false },
+  { title: 'From Science to Global Impact: An Interview with Njapowa on Water Quality Testing', date: 'January 6, 2025', excerpt: 'The challenge of providing basic human necessities on a global scale.', href: '/blog/science-to-global-impact', color: 'from-gray-600 to-gray-400', featured: false },
+  { title: 'Your Healthiest New Year Starts with Smarter Hydration: Make the Coldstream FTO Plus Your First Resolution', date: 'January 6, 2025', excerpt: 'Start your year right with smarter water choices.', href: '/blog/healthy-new-year', color: 'from-teal-700 to-teal-500', featured: false },
+  { title: 'Bacterial Presence on Textiles', date: 'January 6, 2025', excerpt: 'Understanding microbial contamination and hygiene best practices.', href: '/blog/bacterial-textiles', color: 'from-green-700 to-green-600', featured: false },
+  { title: 'Beyond the Pipeline: The $4 Billion Market-Driven Blueprint for Water Security in Africa', date: 'December 26, 2024', excerpt: 'Market-based solutions to the water security crisis across Africa.', href: '/blog/pipeline-africa', color: 'from-orange-700 to-orange-500', featured: false },
+  { title: 'The Silent Threat: Why You Need Coldstream FTO Plus to Eliminate Lead from Your Drinking Water', date: 'December 26, 2024', excerpt: 'Lead contamination in drinking water poses serious health risks.', href: '/blog/silent-threat-lead', color: 'from-red-800 to-red-600', featured: false },
+  { title: 'The Science of Clean: How Coldstream FTO Combines Ceramic and Carbon for Superior Filtration', date: 'December 10, 2024', excerpt: 'Advanced ceramic and carbon filtration technology explained.', href: '/blog/science-of-clean', color: 'from-indigo-700 to-indigo-500', featured: false },
+  { title: 'The Business of Impact: How to Launch and Scale Your Mission Using Impact Incubator\'s Proven Approach', date: 'November 20, 2024', excerpt: 'Building sustainable social enterprises with measurable impact.', href: '/blog/business-of-impact', color: 'from-purple-700 to-purple-500', featured: false },
+  { title: 'The Power of Conscious Consumerism: How Your Purchases Can Drive Social Impact', date: 'November 20, 2024', excerpt: 'Every purchase is a vote for the world you want to see.', href: '/blog/conscious-consumerism', color: 'from-pink-700 to-pink-500', featured: false },
+];
+
+const [featured, ...rest] = posts;
+---
+
+<Layout title="Blog — Business Connect World">
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-[#0f2444] to-[#1b3a6b] text-white py-16">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="w-full h-full bg-gradient-to-b from-transparent to-[#0f2444] opacity-70"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold">Blogs</h1>
+    </div>
+  </section>
+
+  <!-- Featured post -->
+  <section class="bg-white py-12">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid md:grid-cols-2 gap-8 items-start border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+        <div class={`bg-gradient-to-br ${featured.color} aspect-video flex items-end p-6`}>
+          <span class="text-white text-xs font-bold bg-white/20 px-2 py-0.5 rounded">Featured</span>
+        </div>
+        <div class="p-8">
+          <p class="text-gray-400 text-xs mb-2">{featured.date}</p>
+          <h2 class="font-extrabold text-[#1b3a6b] text-2xl leading-tight mb-3">{featured.title}</h2>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">{featured.excerpt}</p>
+          <a href={featured.href} class="inline-block bg-[#1b3a6b] text-white font-bold px-5 py-2.5 rounded text-sm hover:bg-[#152d52] transition-colors">
+            Continue Reading
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Post grid -->
+  <section class="bg-gray-50 py-12">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        {rest.map(({ title, date, href, color }) => (
+          <a href={href} class="group block rounded-xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-shadow">
+            <div class={`bg-gradient-to-br ${color} h-36 flex items-end p-4`}>
+              <span class="text-white text-xs opacity-80">{date}</span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-[#1b3a6b] text-sm leading-snug group-hover:underline">{title}</h3>
+              <span class="text-[#1d4ed8] text-xs font-semibold mt-2 block">Continue Reading →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Pagination -->
+      <div class="flex items-center justify-center gap-2 mt-10">
+        {[1, 2, 3, 4, 5].map((page) => (
+          <button class={`w-9 h-9 rounded text-sm font-semibold ${page === 1 ? 'bg-[#1b3a6b] text-white' : 'border border-gray-300 text-gray-600 hover:bg-gray-50'}`}>
+            {page}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>

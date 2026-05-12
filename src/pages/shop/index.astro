@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const products = [
+  { name: 'Fequan Gold Endurance Hydration Packets', price: '$43.99', brand: 'Fequan', href: '/shop/fequan-gold' },
+  { name: 'Aquaguard', price: '$11.99', brand: 'Aquaguard', href: '/shop/aquaguard' },
+  { name: 'Aquaguard Alert Water Test', price: '$19.99', brand: 'Aquaguard', href: '/shop/aquaguard-alert' },
+  { name: 'Aquaguard Define Water Test', price: '$32.99', brand: 'Aquaguard', href: '/shop/aquaguard-define' },
+  { name: 'Aquaguards Protocol Water Test', price: '$32.99', brand: 'Aquaguard', href: '/shop/aquaguards-protocol' },
+  { name: 'Aquatabs 490mg Tablets x200', price: '$39.99', brand: 'Aquatabs', href: '/shop/aquatabs-490mg' },
+  { name: 'Aquatabs Inline', price: '$100.00', brand: 'Aquatabs', href: '/shop/aquatabs-inline' },
+  { name: 'Aquamira Water Bottle', price: '$19.98', brand: 'Aquamira', href: '/shop/aquamira-bottle' },
+  { name: 'Aquamira Water Bottle with 490mg Tablets x200', price: '$179.99', brand: 'Aquamira', href: '/shop/aquamira-bottle-tablets' },
+  { name: 'Coldstream Ceramic Water Filter FTO Plus', price: '$47.99 – $184.99', brand: 'Coldstream', href: '/shop/coldstream-fto-plus' },
+  { name: 'Renovo Water Filter', price: '$89.99', brand: 'Renovo', href: '/shop/renovo' },
+  { name: 'Dinka Seal', price: '$271.99', brand: 'Dinka', href: '/shop/dinka-seal' },
+];
+---
+
+<Layout title="Shop — Business Connect World">
+
+  <!-- Page hero -->
+  <section class="relative bg-gradient-to-br from-[#1b3a6b] to-[#2d5a9e] text-white py-16">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute inset-0 bg-[url('/images/shop-hero.jpg')] bg-cover bg-center opacity-20"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-8">
+      <nav class="text-blue-300 text-xs mb-4">
+        <a href="/" class="hover:text-white">Home</a> <span class="mx-1">/</span>
+        <span class="text-white">Filter Products</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        Products people love.<br/>Products that Connect.
+      </h1>
+    </div>
+  </section>
+
+  <!-- Shop layout -->
+  <section class="bg-white py-10">
+    <div class="max-w-7xl mx-auto px-8 flex gap-8">
+
+      <!-- Sidebar -->
+      <aside class="hidden md:block w-52 shrink-0">
+        <div class="mb-6">
+          <p class="font-bold text-[#1b3a6b] text-sm mb-3">Filter products</p>
+          <input type="text" placeholder="Search by keyword or option set" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#8dc63f]" />
+        </div>
+        <div class="mb-6">
+          <p class="font-bold text-[#1b3a6b] text-xs uppercase tracking-wide mb-2">Search by category</p>
+          <p class="font-semibold text-[#1b3a6b] text-xs uppercase tracking-wide mb-2">Categories</p>
+          <ul class="space-y-1 text-sm">
+            {['All', 'Water Filtration', 'Water Storage', 'Water Treatment'].map(cat => (
+              <li>
+                <a href={`/shop?cat=${cat.toLowerCase().replace(' ', '-')}`} class="text-gray-600 hover:text-[#1b3a6b] hover:font-medium transition-colors">
+                  {cat}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p class="font-bold text-[#1b3a6b] text-xs uppercase tracking-wide mb-2">Search by brand</p>
+          <p class="font-semibold text-[#1b3a6b] text-xs uppercase tracking-wide mb-2">Brands</p>
+          <ul class="space-y-1 text-sm">
+            {[
+              { name: 'Aquaguard', count: 3 },
+              { name: 'Aquamira', count: 2 },
+              { name: 'Aquatabs', count: 4 },
+              { name: 'Coldstream', count: 5 },
+              { name: 'Fequan', count: 1 },
+            ].map(({ name, count }) => (
+              <li class="flex justify-between">
+                <a href={`/shop?brand=${name.toLowerCase()}`} class="text-gray-600 hover:text-[#1b3a6b] transition-colors">{name}</a>
+                <span class="text-gray-400 text-xs">{count}</span>
+              </li>
+            ))}
+          </ul>
+          <button class="text-[#1d4ed8] text-xs mt-2 hover:underline">See more</button>
+        </div>
+      </aside>
+
+      <!-- Product grid -->
+      <div class="flex-1">
+        <div class="flex items-center justify-between mb-6">
+          <p class="text-gray-500 text-sm">{products.length} products</p>
+          <select class="border border-gray-300 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#8dc63f]">
+            <option>Sort by: Default</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+          {products.map(({ name, price, brand, href }) => (
+            <a href={href} class="group border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow block">
+              <div class="bg-gray-50 aspect-square flex items-center justify-center p-4">
+                <svg class="w-16 h-16 text-[#1b3a6b] opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div class="p-4">
+                <p class="text-gray-400 text-xs mb-0.5">{brand}</p>
+                <h3 class="font-semibold text-[#1b3a6b] text-sm leading-snug group-hover:underline mb-1">{name}</h3>
+                <p class="text-[#8dc63f] font-bold text-sm">{price}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex items-center justify-center gap-2 mt-10">
+          {[1, 2, 3, '...', 7].map((page) => (
+            <button class={`w-9 h-9 rounded text-sm font-semibold ${page === 1 ? 'bg-[#1b3a6b] text-white' : 'border border-gray-300 text-gray-600 hover:bg-gray-50'}`}>
+              {page}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

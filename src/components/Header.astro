@@ -1,0 +1,385 @@
+---
+---
+
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 2C11 2 5 8.5 5 15.5c0 9 13 19 13 19s13-10 13-19C31 8.5 25 2 18 2z" fill="#1b3a6b"/>
+        <path d="M18 7c-4.5 0-7.5 3.5-7.5 8.5 0 5.5 7.5 12.5 7.5 12.5s7.5-7 7.5-12.5C25.5 10.5 22.5 7 18 7z" fill="#8dc63f"/>
+        <circle cx="18" cy="15.5" r="3.5" fill="white"/>
+        <!-- water drop accent -->
+        <path d="M14 22 Q18 26 22 22" stroke="white" stroke-width="1.2" fill="none" opacity="0.6"/>
+      </svg>
+      <div class="leading-tight">
+        <span class="block text-[#1b3a6b] font-bold text-base tracking-tight">Business</span>
+        <span class="block text-[#8dc63f] font-bold text-base tracking-tight -mt-1">Connect</span>
+      </div>
+    </a>
+
+    <!-- Nav -->
+    <nav class="hidden lg:flex items-center" id="main-nav">
+      {[
+        { label: 'SHOP', id: 'shop' },
+        { label: 'EXPLORE', id: 'explore' },
+        { label: 'LEARN', id: 'learn' },
+        { label: 'CONNECT', id: 'connect' },
+      ].map(({ label, id }) => (
+        <div class="relative group" id={`nav-${id}`}>
+          <button
+            class="nav-btn text-[#1b3a6b] font-bold text-sm tracking-widest px-5 py-5 hover:text-[#8dc63f] transition-colors flex items-center gap-1"
+            aria-expanded="false"
+            data-menu={id}
+          >
+            {label}
+            <svg class="w-3 h-3 mt-0.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+        </div>
+      ))}
+    </nav>
+
+    <!-- Cart -->
+    <a href="/shop" class="hidden lg:flex items-center gap-2 bg-[#1b3a6b] text-white px-5 py-2.5 rounded font-bold text-sm hover:bg-[#152d52] transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+      </svg>
+      YOUR CART
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="lg:hidden p-2 text-[#1b3a6b]" id="mobile-toggle" aria-label="Open menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ── SHOP mega-menu ── -->
+  <div id="menu-shop" class="mega-menu hidden border-t-2 border-[#8dc63f] bg-white shadow-xl absolute left-0 right-0 top-full z-50 py-8">
+    <div class="max-w-7xl mx-auto px-8 grid grid-cols-3 gap-8">
+      <!-- Col 1: Categories -->
+      <div>
+        <p class="font-bold text-[#1b3a6b] text-sm mb-4">Shop by Category</p>
+        <ul class="space-y-3">
+          <li>
+            <a href="/shop?cat=filtration" class="flex items-center gap-3 text-gray-700 hover:text-[#1d4ed8] text-sm">
+              <svg class="w-5 h-5 text-[#1b3a6b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707L13 13.414V19a1 1 0 01-.553.894l-4 2A1 1 0 017 21v-7.586L3.293 6.707A1 1 0 013 6V4z"/></svg>
+              Water Filtration
+            </a>
+          </li>
+          <li>
+            <a href="/shop?cat=storage" class="flex items-center gap-3 text-gray-700 hover:text-[#1d4ed8] text-sm">
+              <svg class="w-5 h-5 text-[#1b3a6b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM4 7V5a2 2 0 012-2h12a2 2 0 012 2v2"/></svg>
+              Water Storage
+            </a>
+          </li>
+          <li>
+            <a href="/shop?cat=treatment" class="flex items-center gap-3 text-gray-700 hover:text-[#1d4ed8] text-sm">
+              <svg class="w-5 h-5 text-[#1b3a6b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+              Water Treatment
+            </a>
+          </li>
+        </ul>
+        <a href="/shop" class="flex items-center gap-1.5 text-[#1d4ed8] text-sm font-semibold mt-4 hover:underline">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          Browse all products
+        </a>
+      </div>
+
+      <!-- Col 2: Brands -->
+      <div class="border-l border-gray-200 pl-8">
+        <p class="font-bold text-[#1b3a6b] text-sm mb-4">Shop by Brand</p>
+        <div class="grid grid-cols-2 gap-3">
+          <a href="/shop?brand=aquatabs" class="text-[#1b3a6b] font-bold text-sm hover:text-[#8dc63f] transition-colors">Aquatabs®</a>
+          <a href="/shop?brand=uzima" class="text-[#1b3a6b] font-bold text-sm hover:text-[#8dc63f] transition-colors">uzima®</a>
+          <a href="/shop?brand=delta" class="text-[#1b3a6b] font-bold text-sm hover:text-[#8dc63f] transition-colors">DELTA</a>
+          <a href="/shop?brand=pg" class="text-[#1b3a6b] font-bold text-sm hover:text-[#8dc63f] transition-colors">P&amp;G Purifier of Water</a>
+          <a href="/shop?brand=coldstream" class="text-[#1b3a6b] font-bold text-sm hover:text-[#8dc63f] transition-colors">Coldstream</a>
+        </div>
+        <a href="/shop" class="flex items-center gap-1.5 text-[#1d4ed8] text-sm font-semibold mt-4 hover:underline">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          Browse all products
+        </a>
+      </div>
+
+      <!-- Col 3: Popular Products -->
+      <div class="border-l border-gray-200 pl-8">
+        <p class="font-bold text-[#1b3a6b] text-sm mb-4">Popular Products</p>
+        <div class="space-y-4">
+          <div class="flex gap-3">
+            <div class="w-12 h-12 bg-gray-100 rounded flex-shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6 text-[#1b3a6b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707L13 13.414V19a1 1 0 01-.553.894l-4 2A1 1 0 017 21v-7.586L3.293 6.707A1 1 0 013 6V4z"/></svg>
+            </div>
+            <div>
+              <p class="font-bold text-[#1b3a6b] text-sm">VF200 Home Pre-Filter</p>
+              <p class="text-xs text-gray-600 mt-0.5">The VF200 Pre-Filter attaches to the VF100 Home Water Filter.</p>
+              <a href="/shop/vf200-home-pre-filter" class="text-[#1d4ed8] text-xs font-semibold hover:underline mt-1 block">Shop for the VF200</a>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <div class="w-12 h-12 bg-gray-100 rounded flex-shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6 text-[#1b3a6b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+            </div>
+            <div>
+              <p class="font-bold text-[#1b3a6b] text-sm">Aquatabs 397mg Tablets x100</p>
+              <p class="text-xs text-gray-600 mt-0.5">Water purification tablets that kill harmful microorganisms in 30 minutes.</p>
+              <a href="/shop/aquatabs-397mg" class="text-[#1d4ed8] text-xs font-semibold hover:underline mt-1 block">Shop for Aquatabs Tablets x100</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EXPLORE mega-menu ── -->
+  <div id="menu-explore" class="mega-menu hidden border-t-2 border-[#8dc63f] bg-white shadow-xl absolute left-0 right-0 top-full z-50 py-8">
+    <div class="max-w-7xl mx-auto px-8 grid grid-cols-2 gap-8">
+      <!-- Col 1: Key Initiatives -->
+      <div>
+        <p class="font-bold text-[#1b3a6b] text-sm mb-4">Our Key Initiatives</p>
+        <div class="space-y-5">
+          <div class="flex gap-3 items-start">
+            <div class="shrink-0 w-24">
+              <span class="text-[#1b6b8a] font-black text-xs leading-tight">FOR<br/>WATER</span>
+            </div>
+            <div>
+              <a href="/explore/bc-for-water" class="font-bold text-[#1b3a6b] text-sm hover:underline block">Business Connect for Water</a>
+              <p class="text-xs text-gray-600 mt-0.5">Advancing our vision of a world where everyone has access to safe drinking water.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 items-start">
+            <div class="shrink-0 w-24">
+              <span class="text-orange-400 font-black text-xs leading-tight">FOR<br/>HYGIENE</span>
+            </div>
+            <div>
+              <a href="/explore/bc-for-hygiene" class="font-bold text-[#1b3a6b] text-sm hover:underline block">Business Connect for Hygiene</a>
+              <p class="text-xs text-gray-600 mt-0.5">Empowering communities with access to essential hygiene solutions for a healthier, safer world.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 items-start">
+            <div class="shrink-0 w-24">
+              <span class="text-red-600 font-black text-xs leading-tight">DISASTER<br/>RELIEF</span>
+            </div>
+            <div>
+              <a href="/explore/disaster-relief" class="font-bold text-[#1b3a6b] text-sm hover:underline block">Disaster Relief</a>
+              <p class="text-xs text-gray-600 mt-0.5">Programs advancing water, hygiene, and disaster relief solutions worldwide.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 2: Browse Database -->
+      <div class="border-l border-gray-200 pl-8">
+        <p class="font-bold text-[#1b3a6b] text-sm mb-2">Browse our Database</p>
+        <p class="text-xs text-gray-600 mb-4">Explore our database of hundreds of solutions and products from organizations all across the world.</p>
+        <ul class="space-y-2">
+          {[
+            { label: 'Solutions Database', href: '/explore/solutions-database' },
+            { label: 'Organizations Database', href: '/explore/organizations' },
+            { label: 'Knowledge Hub', href: '/learn/knowledge-hub' },
+            { label: 'Consultation Hub', href: '/learn/consultation' },
+          ].map(({ label, href }) => (
+            <li>
+              <a href={href} class="flex items-center gap-1.5 text-[#1d4ed8] text-sm font-semibold hover:underline">
+                <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── LEARN mega-menu ── -->
+  <div id="menu-learn" class="mega-menu hidden border-t-2 border-[#8dc63f] bg-white shadow-xl absolute left-0 right-0 top-full z-50 py-8">
+    <div class="max-w-7xl mx-auto px-8 grid grid-cols-3 gap-8">
+      <!-- Col 1 -->
+      <div>
+        <div class="mb-5">
+          <p class="font-bold text-[#1b3a6b] text-sm mb-1">Knowledge Hub</p>
+          <p class="text-xs text-gray-600 mb-2">Have a research question? Explore hundreds of peer-reviewed articles and white papers on everything water &amp; hygiene related.</p>
+          <a href="/learn/knowledge-hub" class="flex items-center gap-1.5 text-[#1d4ed8] text-sm font-semibold hover:underline">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            Explore the Knowledge Hub
+          </a>
+        </div>
+        <div class="mb-5">
+          <p class="font-bold text-[#1b3a6b] text-sm mb-1">Consultation Services</p>
+          <p class="text-xs text-gray-600 mb-2">We're here to help. Reach out and discover how we can help.</p>
+          <a href="/learn/consultation" class="flex items-center gap-1.5 text-[#1d4ed8] text-sm font-semibold hover:underline">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            Explore the Consultation Hub
+          </a>
+        </div>
+        <div>
+          <p class="font-bold text-[#1b3a6b] text-sm mb-1">Webinars &amp; Events</p>
+          <p class="text-xs text-gray-600 mb-2">Stay informed with our upcoming events, featuring global experts and impactful insights.</p>
+          <a href="/learn/events" class="flex items-center gap-1.5 text-[#1d4ed8] text-sm font-semibold hover:underline">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            Browse Events
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Articles -->
+      <div class="border-l border-gray-200 pl-8">
+        <p class="font-bold text-[#1b3a6b] text-sm mb-4">Articles</p>
+        <div class="space-y-4">
+          <div class="flex gap-3">
+            <div class="w-14 h-14 bg-blue-900 rounded overflow-hidden shrink-0">
+              <div class="w-full h-full bg-gradient-to-br from-blue-800 to-blue-600"></div>
+            </div>
+            <div>
+              <a href="/blog/water-energy-nexus-zambia" class="font-semibold text-[#1b3a6b] text-xs hover:underline leading-snug block">Water-Energy Nexus: Lessons from Zambia</a>
+              <p class="text-xs text-gray-500 mt-0.5 line-clamp-2">Author Introduction Charity Tuseko Muwowo Sindano is a seasoned water…</p>
+              <a href="/blog/water-energy-nexus-zambia" class="text-[#1d4ed8] text-xs hover:underline mt-0.5 block">Read more</a>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <div class="w-14 h-14 bg-gray-200 rounded overflow-hidden shrink-0">
+              <div class="w-full h-full bg-gradient-to-br from-gray-400 to-gray-300"></div>
+            </div>
+            <div>
+              <a href="/blog/science-to-global-impact" class="font-semibold text-[#1b3a6b] text-xs hover:underline leading-snug block">From Science to Global Impact: An Interview with…</a>
+              <p class="text-xs text-gray-500 mt-0.5 line-clamp-2">The challenge of providing basic human necessities on a…</p>
+              <a href="/blog/science-to-global-impact" class="text-[#1d4ed8] text-xs hover:underline mt-0.5 block">Read more</a>
+            </div>
+          </div>
+        </div>
+        <a href="/blog" class="flex items-center gap-1.5 text-[#1d4ed8] text-sm font-semibold hover:underline mt-4">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          Read more articles
+        </a>
+      </div>
+
+      <!-- Col 3 -->
+      <div class="border-l border-gray-200 pl-8">
+        <div class="mb-6">
+          <p class="font-bold text-[#1b3a6b] text-sm mb-1">About Our Company</p>
+          <p class="text-xs text-gray-600 mb-2">Who we are, how we help, and who we serve.</p>
+          <a href="/about" class="flex items-center gap-1.5 text-[#1d4ed8] text-sm font-semibold hover:underline">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            Learn more about us
+          </a>
+        </div>
+        <div>
+          <p class="font-bold text-[#1b3a6b] text-sm mb-1">How to Purify Water Safely</p>
+          <p class="text-xs text-gray-600 mb-2">P&amp;G Purifier of Water packets are extremely effective at removing impurities from highly contaminated water.</p>
+          <a href="/learn/how-to-purify-water" class="flex items-center gap-1.5 text-[#1d4ed8] text-sm font-semibold hover:underline">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            Learn more now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONNECT mega-menu ── -->
+  <div id="menu-connect" class="mega-menu hidden border-t-2 border-[#8dc63f] bg-white shadow-xl absolute left-0 right-0 top-full z-50 py-8">
+    <div class="max-w-7xl mx-auto px-8 grid grid-cols-3 gap-8">
+      <!-- Col 1 -->
+      <div>
+        <div class="mb-5">
+          <p class="font-bold text-[#1b3a6b] text-sm mb-1">Distributors</p>
+          <p class="text-xs text-gray-600 mb-2">Our business model is built on distribution. Working in over 40 countries, we specialize in helping local business thrive while also making an impact.</p>
+          <a href="/connect/distributors" class="flex items-center gap-1.5 text-[#1d4ed8] text-sm font-semibold hover:underline">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            Learn how we can help
+          </a>
+        </div>
+        <div>
+          <p class="font-bold text-[#1b3a6b] text-sm mb-1">Asia Partnerships</p>
+          <p class="text-xs text-gray-600 mb-2">Supporting safe water, hygiene, and sanitation solutions across communities and businesses in Asia.</p>
+          <a href="/connect/asia-partnerships" class="flex items-center gap-1.5 text-[#1d4ed8] text-sm font-semibold hover:underline">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            Explore Initiatives
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2 -->
+      <div class="border-l border-gray-200 pl-8">
+        <p class="font-bold text-[#1b3a6b] text-sm mb-1">Careers</p>
+        <p class="text-xs text-gray-600 mb-2">Explore opportunities to join our global team of experts working to ensure global access to safe water, hygiene, and sanitation.</p>
+        <a href="/connect/careers" class="flex items-center gap-1.5 text-[#1d4ed8] text-sm font-semibold hover:underline">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          Explore careers
+        </a>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div class="border-l border-gray-200 pl-8">
+        <p class="font-bold text-[#1b3a6b] text-sm mb-3">Contact Us</p>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-center gap-2 text-sm text-gray-700">
+            <svg class="w-4 h-4 text-[#1b3a6b] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            1-833-229-6753
+          </li>
+          <li class="flex items-center gap-2 text-sm text-gray-700">
+            <svg class="w-4 h-4 text-[#1b3a6b] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            contact@businessconnectworld.com
+          </li>
+          <li class="flex items-start gap-2 text-sm text-gray-700">
+            <svg class="w-4 h-4 text-[#1b3a6b] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            4064 Division Ave S, Grand Rapids, MI 49548
+          </li>
+        </ul>
+        <a href="/connect/contact" class="inline-block bg-[#1b3a6b] text-white text-sm font-bold px-5 py-2.5 rounded hover:bg-[#152d52] transition-colors">
+          Send us a message
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200 px-4 py-4">
+    <nav class="space-y-1">
+      <a href="/shop" class="block px-3 py-2 text-[#1b3a6b] font-bold text-sm tracking-widest uppercase hover:bg-gray-50 rounded">Shop</a>
+      <a href="/explore" class="block px-3 py-2 text-[#1b3a6b] font-bold text-sm tracking-widest uppercase hover:bg-gray-50 rounded">Explore</a>
+      <a href="/learn/knowledge-hub" class="block px-3 py-2 text-[#1b3a6b] font-bold text-sm tracking-widest uppercase hover:bg-gray-50 rounded">Learn</a>
+      <a href="/connect/contact" class="block px-3 py-2 text-[#1b3a6b] font-bold text-sm tracking-widest uppercase hover:bg-gray-50 rounded">Connect</a>
+      <a href="/shop" class="block mt-2 bg-[#1b3a6b] text-white px-4 py-2 rounded font-bold text-sm text-center">Your Cart</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.nav-btn');
+  const menus: Record<string, HTMLElement | null> = {
+    shop: document.getElementById('menu-shop'),
+    explore: document.getElementById('menu-explore'),
+    learn: document.getElementById('menu-learn'),
+    connect: document.getElementById('menu-connect'),
+  };
+
+  function closeAll() {
+    Object.values(menus).forEach(m => m?.classList.add('hidden'));
+    buttons.forEach(b => b.setAttribute('aria-expanded', 'false'));
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = btn.dataset.menu as string;
+      const isOpen = !menus[id]?.classList.contains('hidden');
+      closeAll();
+      if (!isOpen) {
+        menus[id]?.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  document.addEventListener('click', closeAll);
+  document.querySelectorAll('.mega-menu').forEach(m => m.addEventListener('click', e => e.stopPropagation()));
+
+  // Mobile toggle
+  document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+</script>

@@ -1,0 +1,110 @@
+---
+---
+
+<footer class="bg-[#1b3a6b] text-white">
+  <div class="max-w-7xl mx-auto px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <a href="/" class="flex items-center gap-2 mb-3">
+          <svg width="32" height="32" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2C11 2 5 8.5 5 15.5c0 9 13 19 13 19s13-10 13-19C31 8.5 25 2 18 2z" fill="white" opacity="0.9"/>
+            <path d="M18 7c-4.5 0-7.5 3.5-7.5 8.5 0 5.5 7.5 12.5 7.5 12.5s7.5-7 7.5-12.5C25.5 10.5 22.5 7 18 7z" fill="#8dc63f"/>
+            <circle cx="18" cy="15.5" r="3.5" fill="white"/>
+          </svg>
+          <div class="leading-tight">
+            <span class="block text-white font-bold text-sm">Business</span>
+            <span class="block text-[#8dc63f] font-bold text-sm -mt-0.5">Connect</span>
+          </div>
+        </a>
+        <p class="text-blue-200 text-xs leading-relaxed">Connecting business expertise with social impact</p>
+      </div>
+
+      <!-- Shop -->
+      <div>
+        <p class="font-bold text-sm mb-3 text-white">Shop</p>
+        <ul class="space-y-2">
+          {[
+            { label: 'Featured Products', href: '/shop' },
+            { label: 'All Products', href: '/shop' },
+            { label: 'HTMLR for Handwasher', href: '/shop' },
+            { label: 'New Arrivals', href: '/shop' },
+            { label: 'Your Orders', href: '/shop' },
+            { label: 'Products Catalog', href: '/shop' },
+          ].map(({ label, href }) => (
+            <li><a href={href} class="text-blue-200 text-xs hover:text-white transition-colors">{label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Explore -->
+      <div>
+        <p class="font-bold text-sm mb-3 text-white">Explore</p>
+        <ul class="space-y-2">
+          {[
+            { label: 'Business Connect for Water', href: '/explore/bc-for-water' },
+            { label: 'Our Distributors', href: '/connect/distributors' },
+            { label: 'Our Brands', href: '/shop' },
+            { label: 'Asia Partnerships', href: '/connect/asia-partnerships' },
+            { label: 'Disaster Relief', href: '/explore/disaster-relief' },
+          ].map(({ label, href }) => (
+            <li><a href={href} class="text-blue-200 text-xs hover:text-white transition-colors">{label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Learn -->
+      <div>
+        <p class="font-bold text-sm mb-3 text-white">Learn</p>
+        <ul class="space-y-2">
+          {[
+            { label: 'Our Distributors', href: '/connect/distributors' },
+            { label: 'Our Brands', href: '/shop' },
+            { label: 'Our Brandbooks', href: '/learn/knowledge-hub' },
+            { label: 'Join Our Team', href: '/connect/careers' },
+          ].map(({ label, href }) => (
+            <li><a href={href} class="text-blue-200 text-xs hover:text-white transition-colors">{label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Connect + Newsletter -->
+      <div>
+        <p class="font-bold text-sm mb-3 text-white">Connect</p>
+        <ul class="space-y-2 mb-6">
+          {[
+            { label: 'Contact Us', href: '/connect/contact' },
+          ].map(({ label, href }) => (
+            <li><a href={href} class="text-blue-200 text-xs hover:text-white transition-colors">{label}</a></li>
+          ))}
+        </ul>
+
+        <p class="font-bold text-sm mb-2 text-white">Join our Newsletter</p>
+        <form class="space-y-2" onsubmit="return false;">
+          <input
+            type="text"
+            placeholder="Enter your name"
+            class="w-full px-3 py-2 rounded text-sm text-gray-800 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#8dc63f]"
+          />
+          <div class="flex gap-2">
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="flex-1 px-3 py-2 rounded text-sm text-gray-800 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#8dc63f]"
+            />
+            <button type="submit" class="bg-[#8dc63f] hover:bg-[#76a834] transition-colors text-white font-bold px-4 py-2 rounded text-sm">
+              Subscribe
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-blue-800">
+    <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+      <p class="text-blue-300 text-xs">Copyright &copy; 2025</p>
+    </div>
+  </div>
+</footer>
